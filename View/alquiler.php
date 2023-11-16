@@ -1,9 +1,9 @@
 <?php
 
-use Controller\AlqCarroController;
+use Controller\AlqlibroController;
 use Controller\AlquilerController;
 
-$guardar = new AlqCarroController();
+$guardar = new AlqlibroController();
 $alquiler = new AlquilerController();
 //$inscripcion = new InscripcionController();
 

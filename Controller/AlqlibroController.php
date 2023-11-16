@@ -3,7 +3,7 @@
 namespace Controller;
 use Model\alquilarlibroModel;
 
-class AlqCarroController{
+class AlqlibroController{
 
     public function Alquilar(){
         if( !empty($_POST['idlibro'])){
@@ -18,8 +18,8 @@ class AlqCarroController{
     }
 
     public function mostrar(){
-        $inscripcion = alquilarlibroModel::mostrarAlquiler();
-        return $inscripcion;//se van a la vista
+        $libro = alquilarlibroModel::mostrarAlquiler();
+        return $libro;//se van a la vista
     }
 
     public function editar(){
@@ -44,15 +44,15 @@ class AlqCarroController{
 
     public function borrar(){
         if( !empty($_GET['idAlquiler'])){
-            $inscripcion = alquilarlibroModel::borrarInscripcion($_GET['idAlquiler']);
-            return $inscripcion;
+            $alquiler = alquilarlibroModel::borrarInscripcion($_GET['idAlquiler']);
+            return $alquiler;
         }
     }
 
     public function confirmarBorrar(){
         if( !empty($_POST['idAlquiler'])){
-            $inscripcion = alquilarlibroModel::borrarConfirmadoAlquiler($_POST['idAlquiler']);
-            if($inscripcion){ header("Location: index.php?action=verAlquiler"); }
+            $alquiler = alquilarlibroModel::borrarConfirmadoAlquiler($_POST['idAlquiler']);
+            if($alquiler){ header("Location: index.php?action=verAlquiler"); }
         }
         
     }
